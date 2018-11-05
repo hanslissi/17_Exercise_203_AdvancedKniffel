@@ -28,6 +28,7 @@ public class KniffelGUI extends javax.swing.JFrame {
         taGewinn.setDefaultRenderer(Object.class, kniffelRenderer);
         taDice.setModel(bl.getDiceModel());
         taDice.setDefaultRenderer(Object.class, diceRenderer);
+        taGewinn.setEnabled(firstTurnDone);
     }
 
     /**
@@ -169,6 +170,7 @@ public class KniffelGUI extends javax.swing.JFrame {
 
     private void btTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTurnActionPerformed
         firstTurnDone = true;
+        taGewinn.setEnabled(firstTurnDone);
         if (!taDice.getCellSelectionEnabled()) {
             taDice.setCellSelectionEnabled(true);
         }
@@ -198,6 +200,7 @@ public class KniffelGUI extends javax.swing.JFrame {
                 taDice.clearSelection();
                 updatePoints();
                 firstTurnDone = false;
+                taGewinn.setEnabled(firstTurnDone);
                 }
                 catch(Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());

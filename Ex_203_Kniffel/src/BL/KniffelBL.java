@@ -75,8 +75,8 @@ public class KniffelBL {
                 if (checkIfStreet(4)) {
                     sumOfBottom += 30;
                     kniffelModel.getRowByIndex(index).setPoints(30);
-                    kniffelModel.getRowByIndex(index).getChecked().setSelected(true);
                 }
+                kniffelModel.getRowByIndex(index).getChecked().setSelected(true);
                 break;
             case 10:
                 if (checkIfStreet(5)) {
